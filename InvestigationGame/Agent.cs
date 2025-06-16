@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace InvestigationGame
 {
-    internal class Agent
+    internal abstract class Agent
     {
         public Dictionary<string , int> Weaknesses { get; set; }
-        public List<Sensors> Sensors { get; set; }
+        public List<Sensor> Sensors { get; set; }
 
         public Agent(List<string> weaknesses)
         {
@@ -25,7 +25,7 @@ namespace InvestigationGame
                     Weaknesses.Add(weakness, 1);
                 }
             }
-            Sensors = new List<Sensors>();
+            Sensors = new List<Sensor>();
         }
 
     }
