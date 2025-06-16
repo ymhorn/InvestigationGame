@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace InvestigationGame
 {
-    internal class Program
+    internal abstract class Sensor
     {
-        static void Main(string[] args)
-        {
-            
-        }
+        protected string Type { get; set;}
+        public abstract void Activate();
+
     }
 }
