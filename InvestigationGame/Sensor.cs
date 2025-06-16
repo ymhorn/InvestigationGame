@@ -8,7 +8,7 @@ namespace InvestigationGame
 {
     internal abstract class Sensor
     {
-        protected string Type { get; set;}
+        public abstract string TypeOfSensor();
         public abstract void Activate();
 
     }

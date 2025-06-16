@@ -44,11 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Agent.cs" />
+    <Compile Include="AudioSensor.cs" />
     <Compile Include="FootSoldier.cs" />
     <Compile Include="Human.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sensor.cs" />
+    <Compile Include="ThermalSensor.cs" />
     <Compile Include="WeaknessOptions.cs" />
   </ItemGroup>
   <ItemGroup>

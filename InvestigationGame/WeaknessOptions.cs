@@ -11,12 +11,12 @@ namespace InvestigationGame
         public static List<string> WeaknessList = new List<string>
         {
             "Thermal",
-            "Audio",
-            "Pulse",
-            "Motion",
-            "Signal",
-            "Magnetic",
-            "Light"
+            "Audio"
+            //"Pulse",
+            //"Motion",
+            //"Signal",
+            //"Magnetic",
+            //"Light"
         };
     }
 }
