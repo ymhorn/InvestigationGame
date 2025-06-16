@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace InvestigationGame
 {
-    internal class Program
+    internal class FootSoldier:Agent
     {
-        static void Main(string[] args)
+        public FootSoldier(int rank = 2) : base(rank)
         {
-            FootSoldier soldier = new FootSoldier();
-            Console.WriteLine(soldier.Weaknesses.Count);
+
         }
+        
+
+
+
+
+
     }
 }

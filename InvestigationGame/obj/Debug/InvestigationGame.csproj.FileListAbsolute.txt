@@ -1,0 +1,7 @@
+C:\Users\Yisroel Meir\source\repos\InvestigationGame\InvestigationGame\bin\Debug\InvestigationGame.exe.config
+C:\Users\Yisroel Meir\source\repos\InvestigationGame\InvestigationGame\bin\Debug\InvestigationGame.exe
+C:\Users\Yisroel Meir\source\repos\InvestigationGame\InvestigationGame\bin\Debug\InvestigationGame.pdb
+C:\Users\Yisroel Meir\source\repos\InvestigationGame\InvestigationGame\obj\Debug\InvestigationGame.csproj.AssemblyReference.cache
+C:\Users\Yisroel Meir\source\repos\InvestigationGame\InvestigationGame\obj\Debug\InvestigationGame.csproj.CoreCompileInputs.cache
+C:\Users\Yisroel Meir\source\repos\InvestigationGame\InvestigationGame\obj\Debug\InvestigationGame.exe
+C:\Users\Yisroel Meir\source\repos\InvestigationGame\InvestigationGame\obj\Debug\InvestigationGame.pdb

@@ -10,11 +10,20 @@ namespace InvestigationGame
     {
         public Dictionary<string , int> Weaknesses { get; set; }
         public List<Sensor> Sensors { get; set; }
-
-        public Agent(List<string> weaknesses)
+        public int Rank { get; set; }
+        public Agent(int rank)
         {
+            Rank = rank;
+            List<string> weaknessList = new List<string>();
+            Random random = new Random();
+            for (int i = 0; i < Rank; i++)
+            {
+                weaknessList.Add(WeaknessOptions.WeaknessList[random.Next(WeaknessOptions.WeaknessList.Count)]);            
+            }
+
             Weaknesses = new Dictionary<string, int>();
-            foreach (string weakness in weaknesses)
+
+            foreach (string weakness in weaknessList)
             {
                 if (Weaknesses.ContainsKey(weakness))
                 {
