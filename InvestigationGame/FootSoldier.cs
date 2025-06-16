@@ -8,15 +8,7 @@ namespace InvestigationGame
 {
     internal class FootSoldier:Agent
     {
-        public FootSoldier(int rank = 2) : base(rank)
-        {
-
-        }
+        public FootSoldier(int rank = 2) : base(rank) { }
         
-
-
-
-
-
     }
 }

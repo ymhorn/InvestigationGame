@@ -13,7 +13,7 @@ namespace InvestigationGame
         public int Rank { get; set; }
         public Agent(int rank)
         {
-            Rank = rank;
+            this.Rank = rank;
             List<string> weaknessList = new List<string>();
             Random random = new Random();
             for (int i = 0; i < Rank; i++)
@@ -21,7 +21,7 @@ namespace InvestigationGame
                 weaknessList.Add(WeaknessOptions.WeaknessList[random.Next(WeaknessOptions.WeaknessList.Count)]);            
             }
 
-            Weaknesses = new Dictionary<string, int>();
+            this.Weaknesses = new Dictionary<string, int>();
 
             foreach (string weakness in weaknessList)
             {
@@ -34,7 +34,7 @@ namespace InvestigationGame
                     Weaknesses.Add(weakness, 1);
                 }
             }
-            Sensors = new List<Sensor>();
+            this.Sensors = new List<Sensor>();
         }
 
     }
