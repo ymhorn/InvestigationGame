@@ -11,11 +11,9 @@ namespace InvestigationGame
     {
         static void Main(string[] args)
         {
-            FootSoldier soldier = new FootSoldier();
-            foreach(string abc in soldier.Weaknesses.Keys)
-            {
-                Console.WriteLine(abc);
-            }
+            GameManager.StartGame();
+            GameManager.Beginner();
+            GameManager.EndGame();
         }
     }
 }
