@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InvestigationGame
 {
-    internal class PulseSensor:Sensor
+    internal class PulseSensor : Sensor
     {
         public override string TypeOfSensor()
         {
@@ -16,5 +16,5 @@ namespace InvestigationGame
         {
 
         }
-           
+    }     
 }

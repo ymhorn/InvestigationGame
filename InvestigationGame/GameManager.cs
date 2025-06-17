@@ -87,6 +87,7 @@ namespace InvestigationGame
                 }
                 if (count % 10 == 0)
                 {
+                    Console.WriteLine("You have reached 10 turns, we now reset the agent's sensors and weaknesses");
                     agent.Sensors.Clear();
                     agent.Weaknesses.Clear();
                     agent.Weaknesses = agent.GetWeaknesses();
