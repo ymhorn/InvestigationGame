@@ -16,26 +16,7 @@ namespace InvestigationGame
         {
             this.Rank = rank;
             this.Caught = false;
-            List<string> weaknessList = new List<string>();
-            Random random = new Random();
-            for (int i = 0; i < Rank; i++)
-            {
-                weaknessList.Add(WeaknessOptions.WeaknessList[random.Next(WeaknessOptions.WeaknessList.Count)]);            
-            }
-
-            this.Weaknesses = new Dictionary<string, int>();
-
-            foreach (string weakness in weaknessList)
-            {
-                if (Weaknesses.ContainsKey(weakness))
-                {
-                    Weaknesses[weakness] ++;
-                }
-                else
-                {
-                    Weaknesses.Add(weakness, 1);
-                }
-            }
+            this.Weaknesses = GetWeaknesses();
             this.Sensors = new List<Sensor>();
         }
         public void Uncovered()
@@ -49,6 +30,29 @@ namespace InvestigationGame
                 Console.WriteLine("WOW you have uncovered the agent!!");
                 this.Caught = true;
             }
+
+        }
+        public Dictionary<string, int> GetWeaknesses()
+        {
+            List<string> weaknessList = new List<string>();
+            Random random = new Random();
+            for (int i = 0; i < Rank; i++)
+            {
+                weaknessList.Add(WeaknessOptions.WeaknessList[random.Next(WeaknessOptions.WeaknessList.Count)]);
+            }
+            Dictionary<string, int> weaknesses = new Dictionary<string, int>();
+            foreach (string weakness in weaknessList)
+            {
+                if (weaknesses.ContainsKey(weakness))
+                {
+                    weaknesses[weakness]++;
+                }
+                else
+                {
+                    weaknesses.Add(weakness, 1);
+                }
+            }
+            return weaknesses;
 
         }
 

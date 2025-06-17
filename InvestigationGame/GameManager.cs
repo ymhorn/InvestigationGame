@@ -28,7 +28,73 @@ namespace InvestigationGame
             Console.WriteLine($"You finished after {count} times.");
                         
         }
-        
+        public static void Intermediate()
+        {
+            Console.WriteLine("Level Intermediate!");
+            Console.WriteLine("Let's Get Going!");
+            SquadLeader agent = new SquadLeader();
+            int count = 0;
+            while (!agent.Caught)
+            {
+                AddSensor(agent);
+                agent.Uncovered();
+                count++;
+                if (count % 3 == 0)
+                {
+                    Console.WriteLine("You have reached 3 turns, we now undo a sensor");
+                    UndoTurn(agent);
+                }
+            }
+            Console.WriteLine($"You finished after {count} times.");
+        }
+
+        public static void Hard()
+        {
+            Console.WriteLine("Level Hard!");
+            Console.WriteLine("Let's Get Going!");
+            SeniorCommander agent = new SeniorCommander();
+            int count = 0;
+            while (!agent.Caught)
+            {
+                AddSensor(agent);
+                agent.Uncovered();
+                count++;
+                if (count % 3 == 0)
+                {
+                    Console.WriteLine("You have reached 3 turns, we now undo 2 sensors");
+                    UndoTurn(agent);
+                    UndoTurn(agent);
+                }
+            }
+            Console.WriteLine($"You finished after {count} times.");
+        }
+
+        public static void Advanced()
+        {
+            Console.WriteLine("Level Advanced!");
+            Console.WriteLine("Let's Get Going!");
+            OrganizationLeader agent = new OrganizationLeader();
+            int count = 0;
+            while (!agent.Caught)
+            {
+                AddSensor(agent);
+                agent.Uncovered();
+                count++;
+                if (count % 3 == 0)
+                {
+                    Console.WriteLine("You have reached 3 turns, we now undo a sensor");
+                    UndoTurn(agent);
+                }
+                if (count % 10 == 0)
+                {
+                    agent.Sensors.Clear();
+                    agent.Weaknesses.Clear();
+                    agent.Weaknesses = agent.GetWeaknesses();
+                }
+            }
+            Console.WriteLine($"You finished after {count} times.");
+
+        }
 
         public static void AddSensor(Agent agent)
         {
@@ -61,11 +127,21 @@ namespace InvestigationGame
             {
                 Console.WriteLine("Not this time, but try again");
             }
+        }
 
-
-
-
-
+        public static void UndoTurn(Agent agent)
+        {
+            if (agent.Sensors.Count > 0)
+            {
+                Random random = new Random();
+                Sensor sensor = agent.Sensors[random.Next(agent.Sensors.Count)];
+                agent.Sensors.Remove(sensor);                
+                agent.Weaknesses[sensor.TypeOfSensor()]++;
+            }
+            else
+            {
+                Console.WriteLine("There are no sensors to remove.");
+            }
         }
 
 
