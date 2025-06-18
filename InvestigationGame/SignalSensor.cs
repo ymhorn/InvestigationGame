@@ -14,7 +14,8 @@ namespace InvestigationGame
         }
         public override void Activate(Agent agent)
         {
-            
+            Console.WriteLine("Added a signal sensor.");
+            Console.WriteLine($"FYO The agent you are playing with has {agent.Rank} sensor slots");
         }
     }
 }

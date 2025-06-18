@@ -52,8 +52,17 @@ namespace InvestigationGame
                 }
                 if (count % 3 == 0)
                 {
-                    Console.WriteLine("You have reached 3 turns, we now undo a sensor");
-                    UndoTurn(agent);
+                    if (agent.BreakAttack == 0)
+                    {
+                        Console.WriteLine("You have reached 3 turns, we now undo a sensor.");
+                        UndoTurn(agent);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Your magnetic sensor stopped the agent removing a sensor.");
+                        agent.BreakAttack--;
+
+                    }
                 }
                 
             }
@@ -81,9 +90,17 @@ namespace InvestigationGame
                 }
                 if (count % 3 == 0)
                 {
-                    Console.WriteLine("You have reached 3 turns, we now undo 2 sensors");
-                    UndoTurn(agent);
-                    UndoTurn(agent);
+                    if (agent.BreakAttack == 0)
+                    {
+                        Console.WriteLine("You have reached 3 turns, we now undo a sensor.");
+                        UndoTurn(agent);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Your magnetic sensor stopped the agent removing a sensor.");
+                        agent.BreakAttack--;
+
+                    }
                 }
             }
             if (!agent.Caught)
@@ -110,8 +127,17 @@ namespace InvestigationGame
                 }
                 if (count % 3 == 0)
                 {
-                    Console.WriteLine("You have reached 3 turns, we now undo a sensor");
-                    UndoTurn(agent);
+                    if (agent.BreakAttack == 0)
+                    {
+                        Console.WriteLine("You have reached 3 turns, we now undo a sensor.");
+                        UndoTurn(agent);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Your magnetic sensor stopped the agent removing a sensor.");
+                        agent.BreakAttack--;
+
+                    }
                 }
                 if (count % 10 == 0)
                 {

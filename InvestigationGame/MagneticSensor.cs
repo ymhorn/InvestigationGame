@@ -14,6 +14,8 @@ namespace InvestigationGame
         }
         public override void Activate(Agent agent)
         {
+            Console.WriteLine("Added a magnetic sensor");
+            agent.BreakAttack += 2;
 
         }
             

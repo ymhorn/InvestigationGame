@@ -12,8 +12,10 @@ namespace InvestigationGame
         public List<Sensor> Sensors { get; set; }
         public int Rank { get; set; }
         public bool Caught { get; set; }
+        public int BreakAttack { get; set; }
         public Agent(int rank)
         {
+            this.BreakAttack = 0;
             this.Rank = rank;
             this.Caught = false;
             this.Weaknesses = GetWeaknesses();

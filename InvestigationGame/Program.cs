@@ -12,7 +12,7 @@ namespace InvestigationGame
         static void Main(string[] args)
         {
             GameManager.StartGame();
-            GameManager.Advanced();
+            
             GameManager.EndGame();
         }
     }

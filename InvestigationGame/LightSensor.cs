@@ -14,7 +14,14 @@ namespace InvestigationGame
         }
         public override void Activate(Agent agent)
         {
-            
+            Console.WriteLine("Added a light sensor.");
+            Console.WriteLine($"FYO The agent you are playing with has {agent.Rank} sensor slots");
+            string sensors = "";
+            foreach (Sensor sensor in agent.Sensors)
+            {
+                sensors += $"{sensor.TypeOfSensor()} sensor, ";
+            }
+            Console.WriteLine($"AND so far the sensors attached to him are {sensors}.");
         }
     }
   
