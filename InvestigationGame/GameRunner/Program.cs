@@ -38,6 +38,8 @@ namespace InvestigationGame
                     break;
             }
             GameManager.EndGame();
+            
+            
         }
     }
 }

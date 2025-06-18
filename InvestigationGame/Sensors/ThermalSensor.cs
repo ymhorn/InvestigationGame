@@ -18,8 +18,16 @@ namespace InvestigationGame
         {
             Console.WriteLine("Added a thermal sensor.");
             Random random = new Random();
-            string weakness = agent.Weaknesses.Keys.ElementAt(random.Next(agent.Weaknesses.Count));
-            Console.WriteLine($"Hint: 1 of the weaknesses are {weakness}");    
+            List<string> weaknesses = new List<string>();
+            foreach (var weakness in agent.Weaknesses)
+            {
+                if (weakness.Value > 0)
+                {
+                    weaknesses.Add(weakness.Key);
+                }
+            }
+            string weak = weaknesses[random.Next(weaknesses.Count)];
+            Console.WriteLine($"Hint: 1 of the weaknesses are {weak}");    
         }
     }
 }
