@@ -9,7 +9,9 @@ namespace InvestigationGame
     internal abstract class Sensor
     {
         public abstract string TypeOfSensor();
-        public abstract void Activate();
+        public abstract void Activate(Agent agent);
+
+        public bool counted = false;
 
     }
 }

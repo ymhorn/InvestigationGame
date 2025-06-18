@@ -20,10 +20,17 @@ namespace InvestigationGame
             int count = 0;
             while (!agent.Caught)
             {
-
                 AddSensor(agent);
                 agent.Uncovered();
                 count++;
+                if (LoseGame(count, agent))
+                {
+                    break;
+                }
+            }
+            if (!agent.Caught)
+            {
+                Console.WriteLine("LOSER!!!");
             }
             Console.WriteLine($"You finished after {count} times.");
                         
@@ -39,11 +46,20 @@ namespace InvestigationGame
                 AddSensor(agent);
                 agent.Uncovered();
                 count++;
+                if (LoseGame(count,agent))
+                {
+                    break;
+                }
                 if (count % 3 == 0)
                 {
                     Console.WriteLine("You have reached 3 turns, we now undo a sensor");
                     UndoTurn(agent);
                 }
+                
+            }
+            if (!agent.Caught)
+            {
+                Console.WriteLine("LOSER!!!");
             }
             Console.WriteLine($"You finished after {count} times.");
         }
@@ -59,12 +75,20 @@ namespace InvestigationGame
                 AddSensor(agent);
                 agent.Uncovered();
                 count++;
+                if (LoseGame(count, agent))
+                {
+                    break;
+                }
                 if (count % 3 == 0)
                 {
                     Console.WriteLine("You have reached 3 turns, we now undo 2 sensors");
                     UndoTurn(agent);
                     UndoTurn(agent);
                 }
+            }
+            if (!agent.Caught)
+            {
+                Console.WriteLine("LOSER!!!");
             }
             Console.WriteLine($"You finished after {count} times.");
         }
@@ -80,6 +104,10 @@ namespace InvestigationGame
                 AddSensor(agent);
                 agent.Uncovered();
                 count++;
+                if (LoseGame(count, agent))
+                {
+                    break;
+                }
                 if (count % 3 == 0)
                 {
                     Console.WriteLine("You have reached 3 turns, we now undo a sensor");
@@ -93,13 +121,17 @@ namespace InvestigationGame
                     agent.Weaknesses = agent.GetWeaknesses();
                 }
             }
+            if (!agent.Caught)
+            {
+                Console.WriteLine("LOSER!!!");
+            }
             Console.WriteLine($"You finished after {count} times.");
 
         }
 
         public static void AddSensor(Agent agent)
         {
-            Console.WriteLine("What type of sensor would you like to put on the agent");
+            Console.WriteLine("\nWhat type of sensor would you like to put on the agent");
             Console.WriteLine("Please pick a sensor from the list below:\n" +
                 "1.Thermal Sensor\n" +
                 "2.Audio Sensor\n" +
@@ -141,7 +173,7 @@ namespace InvestigationGame
             {
                 Console.WriteLine("Woo Hoo, you have found a weakness");
                 agent.Sensors.Add(sensor);
-                sensor.Activate();
+                sensor.Activate(agent);
                 agent.Weaknesses[sensor.TypeOfSensor()]--;
             }
             else
@@ -163,6 +195,21 @@ namespace InvestigationGame
             {
                 Console.WriteLine("There are no sensors to remove.");
             }
+        }
+        public static bool LoseGame(int count,Agent agent)
+        {
+            bool lose = false;
+            if (count >= 25)
+            {
+                Console.WriteLine("You've reached the maximum amount of tries.");
+                lose = true;
+            }
+            if (agent.Sensors.Count > 0 && agent.Sensors[agent.Sensors.Count-1].TypeOfSensor()=="Motion" && agent.Sensors[agent.Sensors.Count-1].counted)
+            {
+                Console.WriteLine("You've added too many motion sensors.");
+                lose = true;
+            }
+            return lose;
         }
 
 

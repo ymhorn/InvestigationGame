@@ -13,9 +13,9 @@ namespace InvestigationGame
             return "Audio";
         }
 
-        public override void Activate()
+        public override void Activate(Agent agent)
         {
-           
+            Console.WriteLine("Added a audio sensor.");
         }
 
     }

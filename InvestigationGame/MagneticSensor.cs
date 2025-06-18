@@ -12,7 +12,7 @@ namespace InvestigationGame
         {
             return "Magnetic";
         }
-        public override void Activate()
+        public override void Activate(Agent agent)
         {
 
         }

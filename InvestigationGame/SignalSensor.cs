@@ -12,7 +12,7 @@ namespace InvestigationGame
         {
             return "Signal";
         }
-        public override void Activate()
+        public override void Activate(Agent agent)
         {
             
         }
