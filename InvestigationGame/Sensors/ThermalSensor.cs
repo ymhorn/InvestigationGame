@@ -12,6 +12,8 @@ namespace InvestigationGame
         {
             return "Thermal";
         }
+
+        // This method provides a hint about one of the agent's weaknesses.
         public override void Activate(Agent agent)
         {
             Console.WriteLine("Added a thermal sensor.");

@@ -12,6 +12,8 @@ namespace InvestigationGame
         {
             return "Magnetic";
         }
+
+        //This method breaks 2 counter attacks every time a magnetic sensor is added to the agent.
         public override void Activate(Agent agent)
         {
             Console.WriteLine("Added a magnetic sensor");

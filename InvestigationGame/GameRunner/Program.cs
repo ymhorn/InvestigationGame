@@ -11,6 +11,7 @@ namespace InvestigationGame
     {
         static void Main(string[] args)
         {
+            //This actually runs the game.
             GameManager.StartGame();
             Console.WriteLine("Pick a level\n" +
                 "1.Beginner\n" +

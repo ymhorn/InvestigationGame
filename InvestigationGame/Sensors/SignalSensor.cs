@@ -12,6 +12,8 @@ namespace InvestigationGame
         {
             return "Signal";
         }
+
+        // This method provides the agent's sensor slots.
         public override void Activate(Agent agent)
         {
             Console.WriteLine("Added a signal sensor.");

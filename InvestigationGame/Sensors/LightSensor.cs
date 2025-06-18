@@ -12,6 +12,8 @@ namespace InvestigationGame
         {
             return "Light";
         }
+
+        // This method provides the agent's sensor slots and lists the sensors attached to the agent.
         public override void Activate(Agent agent)
         {
             Console.WriteLine("Added a light sensor.");

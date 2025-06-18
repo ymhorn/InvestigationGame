@@ -13,6 +13,8 @@ namespace InvestigationGame
         {
             return "Pulse";
         }
+
+        //This method removes a pulse sensor every time 3 pulse sensors are added to the agent.
         public override void Activate(Agent agent)
         {
             Console.WriteLine("Added a pulse sensor.");

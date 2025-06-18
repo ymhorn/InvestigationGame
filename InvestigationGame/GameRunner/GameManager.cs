@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace InvestigationGame
 {
+    //A class that manages the game flow and logic.
     internal static class GameManager
     {
+
+        //This method starts the game and displays a welcome message.
         public static void StartGame()
         {
             Console.WriteLine("Game Started!");
         }
+        //The game for the beginner level.
         public static void Beginner()
         {
             Console.WriteLine("Level Beginner!");
@@ -35,6 +39,8 @@ namespace InvestigationGame
             Console.WriteLine($"You finished after {count} times.");
                         
         }
+
+        //The game for the intermediate level.
         public static void Intermediate()
         {
             Console.WriteLine("Level Intermediate!");
@@ -73,6 +79,7 @@ namespace InvestigationGame
             Console.WriteLine($"You finished after {count} times.");
         }
 
+        // The game for the hard level.
         public static void Hard()
         {
             Console.WriteLine("Level Hard!");
@@ -110,6 +117,7 @@ namespace InvestigationGame
             Console.WriteLine($"You finished after {count} times.");
         }
 
+        // The game for the advanced level.
         public static void Advanced()
         {
             Console.WriteLine("Level Advanced!");
@@ -155,6 +163,7 @@ namespace InvestigationGame
 
         }
 
+        //This method adds a sensor to the agent based on the user's choice and carries out all of the methods of the sensor.
         public static void AddSensor(Agent agent)
         {
             Console.WriteLine("\nWhat type of sensor would you like to put on the agent");
@@ -208,6 +217,7 @@ namespace InvestigationGame
             }
         }
 
+        //This method undoes a turn.
         public static void UndoTurn(Agent agent)
         {
             if (agent.Sensors.Count > 0)
@@ -222,6 +232,8 @@ namespace InvestigationGame
                 Console.WriteLine("There are no sensors to remove.");
             }
         }
+
+        //This method checks if the player losses the game.
         public static bool LoseGame(int count,Agent agent)
         {
             bool lose = false;
@@ -238,7 +250,7 @@ namespace InvestigationGame
             return lose;
         }
 
-
+        // This method ends the game and displays a game over message.
         public static void EndGame()
         {
             Console.WriteLine("Game Over!");

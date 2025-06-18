@@ -12,6 +12,8 @@ namespace InvestigationGame
         {
             return "Motion";
         }
+
+        // This method causes the player to lose if he has to add more then 3 motion sensors.
         public override void Activate(Agent agent)
         {
             Console.WriteLine("Added a motion sensor.");
